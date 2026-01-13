@@ -6,6 +6,13 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
+      // Toda vez que chamarmos /rd-api, o Vite redireciona para a API do RealDebrid
+      '/rd-api': {
+        target: 'https://api.real-debrid.com/rest/1.0',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/rd-api/, ''),
+        secure: false,
+      },
       '/api': {
         // Trocamos localhost por 127.0.0.1 para forçar IPv4
         target: 'http://127.0.0.1:7000', 

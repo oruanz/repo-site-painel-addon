@@ -15,9 +15,9 @@ export default function ItemList({
   onSelectItem,
   onDeleteItem,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  onDeleteStream,
+  //onDeleteStream,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  onDeleteSubtitle,
+  //onDeleteSubtitle,
   onAddStream
 }: ItemListProps) {
   if (items.length === 0) {
